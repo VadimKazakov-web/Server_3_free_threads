@@ -3,7 +3,7 @@
 <p>The WSGI server is based on threads, <br>
 which began with experiments on sockets.</p>
 
-><h3>Important!</h3>
+><h3 style="color: red;">Important!</h3>
 >It is supported only on Linux 2.5.44 and later
 
 
@@ -14,7 +14,7 @@ which began with experiments on sockets.</p>
     <li><b>close_client_sock</b>, to close client sockets</li>
 </ol>
 
-><h3>Note</h3>
+><h3 style="color: yellow;">Note</h3>
 >It is recommended to use a python 3.13 or later<br>
 >build from the source code, with the GIL disabled,<br> 
 >to improve performance. [Free-threaded CPython][1]
