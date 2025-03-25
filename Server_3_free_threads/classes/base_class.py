@@ -1,11 +1,9 @@
-import os
 import threading
 from collections import deque
 import socket
 import logging
 import sys
 import select
-import pathlib
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] [%(filename)s:%(funcName)s] %(message)s')
 log = logging.getLogger(__name__)
@@ -36,8 +34,7 @@ class BaseClassMixin:
         # событие для закрытия клиентского сокета, возникает после записи в сокет
         self._close_client_sock_event = threading.Event()
         # заглушка ответа, используется для работы сервера если configfile не указан
-        self.path_test_page = pathlib.Path('html/test_page.html')
-        self._response_cap = self._response_cap_method(self.path_test_page)
+        self._response_cap = self._response_cap_method()
 
     def _preparation_for_accept(self):
 
@@ -86,14 +83,31 @@ class BaseClassMixin:
         self._close_client_sock_event.set()
 
     @staticmethod
-    def _response_cap_method(path) -> bytes | bool:
+    def _response_cap_method() -> bytes | bool:
 
         """
         Такой ответ отправляется клиенту, когда configfile неуказан
         """
-        data = None
-        with open(path, 'r') as file:
-            data = file.read()
+        data = """
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>Title</title>
+                <style>
+                    .rotate-text {
+                        display: flex;
+                        justify-content: center;
+                        color: #696969;
+                    }
+                </style>
+            </head>
+            <body style="font-family: Arial, sans-serif;">
+                <h1 class="rotate-text">Test page</h1>
+            </body>
+            </html>
+        
+        """
 
         response = (f'HTTP/1.1 200 OK\r\n'
                     f'Content-Type: text/html\r\n'

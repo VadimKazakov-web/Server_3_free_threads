@@ -27,6 +27,5 @@ classifiers = [
 [tool.poetry]
 # ...
 packages = [
-    { include = "html" },
     { include = "Server_3_free_threads" },
 ]
