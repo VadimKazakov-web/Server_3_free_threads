@@ -1,10 +1,24 @@
+<style>
+.none {
+    margin: 0;
+    padding: 0;
+}
+
+.notes {
+    border: 1px solid #4682B4;
+    padding: 20px;
+}
+</style>
+
 <h1>Server_3_free_threads</h1><br>
 
 <p>The WSGI server is based on threads, <br>
 which began with experiments on sockets.</p>
 
-><h3 style="color: red;">Important!</h3>
->It is supported only on Linux 2.5.44 and later
+<div class="notes">
+<h3 class="none" style="color: red;">Important!</h3>
+It is supported only on Linux 2.5.44 and later
+</div>
 
 
 <ol><h3>the server uses four threads:</h3>
@@ -14,10 +28,13 @@ which began with experiments on sockets.</p>
     <li><b>close_client_sock</b>, to close client sockets</li>
 </ol>
 
-><h3 style="color: yellow;">Note</h3>
->It is recommended to use a python 3.13 or later<br>
->build from the source code, with the GIL disabled,<br> 
->to improve performance. [Free-threaded CPython][1]
+
+<div class="notes">
+<h3 class="none" style="color: yellow;">Note</h3>
+It is recommended to use a python 3.13 or later<br>
+build from the source code, with the GIL disabled,<br> 
+to improve performance
+</div>
 
 <h2>Quick start</h2><br>
 
