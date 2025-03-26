@@ -6,7 +6,7 @@ This is a WSGI server based on threads
 <br>
 
 ***
-### *Important!*
+### *<p style="color: red;"><p style="color: red;">Important!</p></p>*
 *It is supported only on Linux 2.5.44 and later*
 ***
 
@@ -21,7 +21,7 @@ This is a WSGI server based on threads
 <br>
 
 ***
-### *Note*
+### *<p style="color: yellow;">Note</p>*
 *It is recommended to use a python 3.13 or later<br>
 build from the source code, with the GIL disabled,<br> 
 to improve performance*
