@@ -60,5 +60,17 @@ sample configuration file:
 
 <img src="img/3.3.png">
 
+### starting the server
+
+now you can start the server with the command:
+
+python -m Server_3_free_threads configfile=<*path*> <br>
+* *path* - relative path to the configuration file
+
+example:
+
+<img src="img/4.1.png">
+
+### done!
 
 
