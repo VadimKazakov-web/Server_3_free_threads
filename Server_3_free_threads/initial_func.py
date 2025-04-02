@@ -1,5 +1,4 @@
 import logging
-import pathlib
 import sys
 from threading import Thread
 import os

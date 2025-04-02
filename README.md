@@ -6,7 +6,7 @@ This is a WSGI server based on threads
 <br>
 
 ***
-### *<p style="color: red;"><p style="color: red;">Important!</p></p>*
+### *Important!*
 *It is supported only on Linux 2.5.44 and later*
 ***
 
@@ -31,7 +31,7 @@ to improve performance*
 
 ## Quick start
 
-### log in to your project folder
+### log in to the root of your project
 <img src="img/1.1.png">
 <img src="img/1.2.png">
 
@@ -39,8 +39,26 @@ to improve performance*
 
 <img src="img/2.1.png">
 
-install the library with the command:<br>
-pip install server-3-free-threads
+### install the library with the command:<br>
+pip install Server_3_free_threads
+
+### log in before the package <br>where the module is located wsgi.py
+<img src="img/3.1.png">
+<img src="img/3.2.png">
+
+### create a text configuration file for the server<br> with any name
+
+The configuration file must contain the following required fields:
+
+* HOST - server host
+* PORT - server port
+* SOCKET_BACKLOG - this parameter in socket.listen(backlog) <br>determines the size of the queue waiting for connection.
+* APP - the module where the wsgi application named *application* is located
+* DOMAIN - server domain
+
+sample configuration file:
+
+<img src="img/3.3.png">
 
 
 
